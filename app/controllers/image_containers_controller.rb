@@ -37,7 +37,7 @@ class ImageContainersController < ApplicationController
     ImageProcessingService.new(@image_container, params[:query]).call!
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: 
+        render turbo_stream:
           turbo_stream.update('processed-image', partial: 'processed_image', locals: { object: @image_container })
       end
     end

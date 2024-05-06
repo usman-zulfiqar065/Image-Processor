@@ -3,8 +3,8 @@ class ImageProcessingService
   require 'rmagick'
 
   BORDER_COLOR = 'red'.freeze
-  OPACITY = 0.freeze
-  STROKE_WIDTH = 2.freeze
+  OPACITY = 0
+  STROKE_WIDTH = 1
 
   def initialize(image_container, query = '')
     @image_container = image_container
@@ -37,13 +37,14 @@ class ImageProcessingService
       rectangle.draw(rmagick_image)
     end
     processed_image_blob = rmagick_image.to_blob
-    @image_container.processed_image.attach(io: StringIO.new(processed_image_blob), filename: "processed_#{Time.now.to_i}.png")
+    @image_container.processed_image.attach(io: StringIO.new(processed_image_blob),
+                                            filename: "processed_#{Time.now.to_i}.png")
   end
 
   def hocr_data
     data = JSON.parse(@image_container.hocr_data)
 
-    data = data.select{ |hash| hash['word'].downcase == @query } if @query.present?
+    data = data.select { |hash| hash['word'].downcase == @query } if @query.present?
 
     data
   end
