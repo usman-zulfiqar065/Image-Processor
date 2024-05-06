@@ -4,6 +4,12 @@
 
 Welcome to the Image Processor Rails Application! This project is designed to process images and highlight specific words within them. It utilizes the power of the `rtesseract` and `rmagick` gems to achieve this functionality. Users can upload images, search for specific words within those images, and download the processed images with highlighted words.
 
+<img width="1792" alt="Screenshot 2024-05-06 at 2 17 49 AM" src="https://github.com/usman-zulfiqar065/Image-Processor/assets/125230430/a8c2ad7d-3d53-4258-88e1-cd6698b73ad2">
+
+<img width="1792" alt="Screenshot 2024-05-06 at 2 18 48 AM" src="https://github.com/usman-zulfiqar065/Image-Processor/assets/125230430/01fa3f63-a1cb-414d-b56f-5270a6a52d7a">
+
+
+
 ## Prerequisites
 
 Before running this project locally, ensure you have the following prerequisites installed:
