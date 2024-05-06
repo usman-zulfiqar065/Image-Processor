@@ -1,0 +1,18 @@
+<div class="p-5">
+  <%= form_with(url: search_word_image_container_path(@image_container), method: :post) do |form| %>
+    <div class="d-flex">
+      <%= form.text_field :query, class: 'form-control rounded-0', placeholder: 'Search for a word', required: true %>
+      <%= form.submit "Search", class: "btn btn-success rounded-0" %>
+    </div>
+  <% end %>
+
+  <div class="row mt-4">
+    <div class="col-6">
+      <h6>Original image</h6>
+      <%= image_tag @image_container.original_image, class: "w-100" %>
+    </div>
+    <div class="col-6" id="processed-image">
+      <%= render 'processed_image' %>
+    </div>
+  </div>
+</div>

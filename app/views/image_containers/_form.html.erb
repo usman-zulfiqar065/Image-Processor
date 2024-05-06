@@ -1,0 +1,11 @@
+
+<%= form_with model: @image_container do |form| %>
+  <div class="field">
+    <%= form.file_field :original_image, class: 'form-control mb-3', required: true, accept:'image/*' %>
+  </div>
+
+  <div class="my-2 text-center">
+    <%= link_to "Cancel", root_path, class: "btn btn-outline-dark rounded-0" %>
+    <%= form.submit class: "btn btn-success rounded-0" %>
+  </div>
+<% end %>

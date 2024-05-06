@@ -1,0 +1,17 @@
+<div class="text-center mt-5">
+  <h5>Upload an Image to process</h5>
+  <%= link_to "Upload Image", new_image_container_path, class: "btn btn-success text-white rounded-0" %>
+
+
+  <div class="d-flex mt-5 p-5">
+    <% @image_containers.each do |image_container| %>
+      <div class="border p-3">
+        <div><%= image_tag image_container.original_image, class: "thumbnail-size" %></div>
+        <div>
+          <%= link_to 'Delete Image', image_container, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-danger" %>
+          <%= link_to 'View Processed Image', image_container, class: "thumbnail-size" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

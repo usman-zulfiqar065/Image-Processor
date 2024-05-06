@@ -1,0 +1,9 @@
+<% if @image_container.processed_image.present? %>
+  <div class="row">
+    <div class="col-6"><h6>Processed image</h6></div>
+    <div class="col-6 text-end"><%= link_to 'Download Processed Image', download_image_container_path(@image_container), class: "w-25vw" %></div>
+  </div>
+  <%= image_tag  @image_container.processed_image, class: "w-100" %>
+<% else %>
+  <h6>Your image is being processed ...</h6>
+<% end %>
